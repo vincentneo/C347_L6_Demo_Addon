@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
+
 public class MainActivity extends AppCompatActivity {
 
     ImageView imageView;
@@ -15,6 +17,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         imageView = findViewById(R.id.imageView);
-        imageView.setImageResource(R.mipmap.ic_launcher);
+
+        String imageUrl = "https://i.imgur.com/tGbaZCY.jpg";
+        Picasso.with(this)
+                .load(imageUrl)
+                .into(imageView);
     }
 }
